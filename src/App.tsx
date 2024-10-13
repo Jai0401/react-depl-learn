@@ -24,7 +24,7 @@ function App() {
         </p>
         <h1 data-testid="counter">{counter}</h1>
         <button onClick={handleIncrement}>Add</button>
-        <button onClick={handleDecrement}>Subtract</button>
+        <button onClick={handleDecrement}>Sub</button>
         <a
           className="App-link"
           href="https://reactjs.org"
