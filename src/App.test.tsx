@@ -25,3 +25,24 @@ test('clicking on increment button should increment the counter', ()=>{
   fireEvent.click(button)
   expect(counterTag.innerHTML === "1").toBeTruthy()
 })
+
+test('renders a subtract button', () => {
+  render(<App />);
+  const button = screen.getByText("Subtract");
+  expect(button).toBeInTheDocument();
+});
+
+test('clicking on subtract button should decrement the counter', () => {
+  render(<App />);
+  const addButton = screen.getByText("Add");
+  const subtractButton = screen.getByText("Subtract");
+  const counterTag = screen.getByTestId("counter");
+
+  // Initial state
+  fireEvent.click(addButton);
+  expect(counterTag.innerHTML).toBe("1");
+
+  // Click subtract button
+  fireEvent.click(subtractButton);
+  expect(counterTag.innerHTML).toBe("0");
+});
