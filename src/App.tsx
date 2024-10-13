@@ -10,6 +10,11 @@ function App() {
     setCounter(val => val + 1)
   }
 
+  // New function to handle decrement
+  const handleDecrement = () => {
+    setCounter(val => val - 1)
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -19,6 +24,7 @@ function App() {
         </p>
         <h1 data-testid="counter">{counter}</h1>
         <button onClick={handleIncrement}>Add</button>
+        <button onClick={handleDecrement}>Sub</button>
         <a
           className="App-link"
           href="https://reactjs.org"
